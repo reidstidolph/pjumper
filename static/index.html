@@ -16,7 +16,7 @@
       >
         <v-img src="logo.svg" max-width="70"></v-img>
         <v-spacer></v-spacer>
-        <v-toolbar-title>Mist WAN Sites</v-toolbar-title>
+        <v-toolbar-title class="hidden-sm-and-down">Mist WAN Sites</v-toolbar-title>
         <v-spacer></v-spacer>
         <div>
         <v-text-field
@@ -67,7 +67,8 @@
           },
           {
             text: "",
-            value: "port"
+            value: "port",
+            sortable: false
           }
         ],
         sitesData : [],
