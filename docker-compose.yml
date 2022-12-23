@@ -5,7 +5,7 @@ services:
     container_name: webserver
     image: nginx
     ports:
-      - "80:80"
+      - "8440:80"
     volumes:
       - ./static:/srv
       - ./default.conf:/etc/nginx/conf.d/default.conf
