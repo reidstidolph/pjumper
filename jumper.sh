@@ -117,7 +117,7 @@ Description=remote support from 128 Technology
 [Service]
 TimeoutStartSec=0
 EnvironmentFile=$CONFIG
-ExecStart=/usr/bin/ssh -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -o ConnectTimeout=10 -o UserKnownHostsFile=$SERVER_FINGERPRINT -i $LOCAL_ID -N -R 127.0.0.1:\${SUPPORT_HOST_PIN}:127.0.0.1:22 -p \$SUPPORT_HOST_PORT \${SUPPORT_USER}@\${SUPPORT_HOST}
+ExecStart=/usr/bin/ssh -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -o ConnectTimeout=10 -o UserKnownHostsFile=/etc/128t-support/support-fingerprint -i /etc/128t-support/support-id -N -R 127.0.0.1:${SUPPORT_HOST_PIN}:127.0.0.1:22 -R 0.0.0.0:${SUPPORT_HOST_GUI}:127.0.0.1:443 -p $SUPPORT_HOST_PORT ${SUPPORT_USER}@${SUPPORT_HOST}
 Restart=always
 RestartSec=60
 
